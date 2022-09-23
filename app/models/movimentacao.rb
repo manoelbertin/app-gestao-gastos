@@ -1,7 +1,7 @@
 class Movimentacao < ApplicationRecord
   enum :tipo, { saida: 'saida', entrada: 'entrada'}
 
-  entradas = Movimentacao.entrada.sum(:valor)
-    saidas = Movimentacao.saida.sum(:valor)
-
+  def self.saldo_atual
+    self.entrada.sum(:valor) - self.saida.sum(:valor)
+  end
 end
