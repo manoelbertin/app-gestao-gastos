@@ -3,7 +3,11 @@ class MovimentacoesController < ApplicationController
 
   # GET /movimentacoes or /movimentacoes.json
   def index
-    @movimentacoes = Movimentacao.all
+    entradas = Movimentacao.entrada.sum(:valor)
+    saidas = Movimentacao.saida.sum(:valor)
+
+    @movimentacoes = Movimentacao.limit(3)
+    @saldo = entradas - saidas
   end
 
   # GET /movimentacoes/1 or /movimentacoes/1.json

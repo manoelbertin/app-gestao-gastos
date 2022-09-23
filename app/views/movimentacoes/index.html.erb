@@ -11,8 +11,7 @@
   <div id="movimentacoes" class="min-w-full">
     <%= render @movimentacoes %>
 
-    <h2 class="text-2xl">
-    <strong>Saldo Atual: </strong><%= Movimentacao.sum(:valor) %>
-    </h2>
+    <h2 class="text-2xl"></h2>
+    <strong>Saldo Atual: </strong><%= @saldo %>
   </div>
 </div>
