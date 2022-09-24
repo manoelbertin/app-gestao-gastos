@@ -3,7 +3,7 @@ class MovimentacoesController < ApplicationController
 
   # GET /movimentacoes or /movimentacoes.json
   def index
-    @movimentacoes = Movimentacao.limit(3)
+    @movimentacoes = Movimentacao.all
     @saldo = Movimentacao.saldo_atual
   end
 
