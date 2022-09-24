@@ -5,7 +5,7 @@ class Movimentacao < ApplicationRecord
   validates :descricao, presence: true
   validates :valor, presence: true
   validates :tipo, presence: true
-  validates :data, comparison: { greater_than: :end_date}
+  validates :data, comparison: { less_than_or_equal_to: :Date.current }
   
   validate :valida_se_existe_saldo
 
