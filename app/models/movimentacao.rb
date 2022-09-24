@@ -1,11 +1,10 @@
 class Movimentacao < ApplicationRecord
   enum :tipo, { saida: 'saida', entrada: 'entrada'}
 
-  validates :data, presence: true
   validates :descricao, presence: true
   validates :valor, presence: true
   validates :tipo, presence: true
-  validates :data, comparison: { less_than_or_equal_to: :Date.current }
+  validates :data, comparison: { less_than_or_equal_to: Date.current }
   
   validate :valida_se_existe_saldo
 
