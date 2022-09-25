@@ -1,5 +1,5 @@
 class MovimentacoesController < ApplicationController
-  before_action :set_movimentacao, only: %i[ show edit update destroy ]
+  before_action :set_movimentacao, only: %i[ update destroy ]
 
   # GET /movimentacoes or /movimentacoes.json
   def index
@@ -7,17 +7,9 @@ class MovimentacoesController < ApplicationController
     @saldo = Movimentacao.saldo_atual
   end
 
-  # GET /movimentacoes/1 or /movimentacoes/1.json
-  def show
-  end
-
   # GET /movimentacoes/new
   def new
     @movimentacao = Movimentacao.new
-  end
-
-  # GET /movimentacoes/1/edit
-  def edit
   end
 
   # POST /movimentacoes or /movimentacoes.json
