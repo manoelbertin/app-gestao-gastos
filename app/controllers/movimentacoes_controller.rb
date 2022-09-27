@@ -1,5 +1,5 @@
 class MovimentacoesController < ApplicationController
-  before_action :set_movimentacao, only: %i[ update destroy ]
+  before_action :set_movimentacao, only: %i[ destroy ]
 
   # GET /movimentacoes or /movimentacoes.json
   def index
