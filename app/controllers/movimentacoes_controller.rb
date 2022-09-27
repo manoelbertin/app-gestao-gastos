@@ -3,15 +3,19 @@ class MovimentacoesController < ApplicationController
 
   # GET /movimentacoes or /movimentacoes.json
   def index
-    @movimentacoes = Movimentacao.all
+    @movimentacoes = Movimentacao.order(data: :desc, created_at: :desc)
     @saldo = Movimentacao.saldo_atual
   end
 
+  def show
+  end
   # GET /movimentacoes/new
   def new
     @movimentacao = Movimentacao.new
   end
 
+  def edit
+  end
   # POST /movimentacoes or /movimentacoes.json
   def create
     @movimentacao = Movimentacao.new(movimentacao_params)
