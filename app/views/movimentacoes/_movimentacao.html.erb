@@ -1,4 +1,5 @@
-<div id="<%= dom_id movimentacao %>"class="p-6 rounded-lg shadow-lg bg-white flex">
+<div id="<%= dom_id movimentacao %>
+"class="p-6 rounded-lg shadow-lg bg-white flex" <%= movimentacao.saida? ? 'text-red' : 'text-green' %>>
   <span class="mr-2">
     <%= l movimentacao.data %>
   </span>
