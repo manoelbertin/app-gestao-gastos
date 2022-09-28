@@ -1,6 +1,8 @@
 class Movimentacao < ApplicationRecord
   enum :tipo, { saida: 'saida', entrada: 'entrada'}
 
+  belongs_to :user
+
   validates :descricao, presence: true
   validates :descricao, length: {minimum:3, maximum:150}
   validates :valor, presence: true
