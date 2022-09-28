@@ -22,6 +22,6 @@ class Movimentacao < ApplicationRecord
     return unless user
     return if entrada?
     return if valor.to_f <= user.movimentacoes.saldo_atual 
-    errors.add :valor, 'não há saldo suficiente para debitar'
+    errors.add valor.to_s, 'reais NÃO PODE! Porque não há saldo suficiente para debitar.'
   end
 end
