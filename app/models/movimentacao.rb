@@ -20,8 +20,6 @@ class Movimentacao < ApplicationRecord
 
   def valida_se_existe_saldo
     return unless user
-      
-    end
     return if entrada?
     return if valor.to_f <= user.movimentacoes.saldo_atual 
     errors.add :valor, 'não há saldo suficiente para debitar'
