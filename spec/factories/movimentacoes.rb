@@ -4,6 +4,6 @@ FactoryBot.define do
     valor { 1500.0 }
     descricao { 'Teste'}
     data { Date.current }
-    # user
+    user
   end
 end
